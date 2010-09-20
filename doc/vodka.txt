@@ -1,0 +1,119 @@
+Welcome
+=======
+Vodka is an exciting new programming language that is guaranteed to make you pee your 
+pants (in a good way).
+
+Getting Started
+---------------
+Get the executable: 
+
+- [Email me with your desired OS target](mailto:vodka@earthvssoup.com "email")
+
+Quick Start:
+
+0. Unpack the Vodka binary
+1. To run Vodka's REPL type the following `./vodka`
+2. To see a list of commands available type `(help)`
+
+Data Types
+----------
+Vodka supports the following datatypes:
+
+- integer
+- floating point
+- boolean (t, nil)
+- symbol 
+- string
+- lists
+
+Variables
+---------
+Scalar variables in Vodka take the form $name
+List variables take the form @name
+
+Comands List
+------------
+
+### Meta-commands
+#### `(help)`
+Shows the list of available commands and keywords.
+
+#### `(quit)`
+Quits the Vodka REPL
+
+#### `(clear)`
+Clears the Vodka REPL's internal memory of all elements.
+
+#### `(reset)`
+Clears the Vodka REPL's internal memory of all elements, *except* structure definitions.
+
+#### `(eval)`
+Takes a string and evaluates it as if it was typed into the command prompt.
+
+#### `(apply)`
+Takes a function name and arguments and *applies* the former to the latter.
+
+`(apply + 2 3)`  => 5
+
+#### `(run)`
+Takes a string pertaining to an external file and evaluates its contents as if they had been typed 
+into the command prompt.
+
+### I/O Commands
+#### `(print)`
+Prints text to the console by default.  The print function takes 1 or more arguments, including 
+the special symbols *endl* and *tab*.  
+
+*See what happens when you type the following into the REPL:*
+
+`(print "This is the number two" tab 2 endl)`
+
+`(print "This is also the number two" tab (/ 100 50) endl)`
+
+`(= $two 2)`
+
+`(print "This is the number two" tab $two endl)`
+
+### List commands
+#### `(list)`
+Creates a list of the arguments given.
+
+#### `(first)`
+Given a list, returns a list of its first element
+
+#### `(rest)`
+Given a list, returns a list of all **but** its first element
+
+### Basic Math
+#### `(+) (*)`
+Add, multiply.  Each takes 0 or more arguments.
+
+#### `(-) (/)`
+Subtract, Divide.  Each takes 1 or more arguments.
+
+#### `(=)`
+Assignment operator of the form `(= $var <expression>)`.
+
+*Example:*
+`(= $pi 3.14)` 
+
+#### `(int) (float)`
+Converts a number to either an integer or float respectively.
+
+### Comparison 
+#### `(==)`
+Checks if the first value is equal to every other value.
+
+#### `(!=)`
+Checks if the first value is not equal to every other value.
+
+### Logic
+#### `(not)`
+Reverses the truth value of a boolean value.
+
+#### `(and)`
+Logical and of zero or more truth values.
+
+#### `(or)`
+Logical or of zero or more truth values.
+

@@ -1,0 +1,11 @@
+;(run "tests/functions.vodka")
+
+
+(fn simple-recursion ($num)
+	(if (!= $num 0)
+		(print $num endl)
+		(simple-recursion (- $num 1))
+	)
+)
+
+(simple-recursion 20000)

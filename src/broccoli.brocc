@@ -1,0 +1,51 @@
+(fn map ($func @lst)
+	(if (= @lst (list))
+		(list)
+	 else
+	 	(cat 	(call $func (first @lst)) 
+	 			(map $func (rest @lst))
+	 	)
+	)
+)
+
+(fn filter ($func @lst)
+	(:= @ret (list))
+	
+	(for $e in @lst
+		(if (call $func $e)
+			(:= @ret (cat $e @ret))
+		) 
+	)
+	
+	@ret
+)
+
+(fn reduce ($func @lst)
+	(:= $tally (first @lst))
+	
+	(if (= 0 (len @lst))
+		(:= $tally (call $func))
+	)
+	
+	(for $e in (rest @lst)
+		(:= $tally (call $func $tally $e))
+	)
+	
+	$tally
+)
+
+(fn fib ($num)
+        (if (< $num 2)
+                $num
+        else
+                (+ (fib (- $num 1)) (fib (- $num 2)))
+        )
+)
+
+(fn fact ($num)
+        (if (= $num 0)
+                1
+        else
+                (* $num (fact (- $num 1)))
+        )
+)

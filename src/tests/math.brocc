@@ -1,0 +1,36 @@
+(fn fib ($num)
+	(if (< $num 2)
+		$num
+	else
+		(+ (fib (- $num 1)) (fib (- $num 2)))
+	)
+)
+
+(fn fact ($num)
+	(if (== $num 0)
+		1
+	else
+		(* $num (fact (- $num 1)))
+	)
+)
+
+(fn fact-iter ($product $counter $max)
+	(if (> $counter $max)
+		$product
+	else
+		(fact-iter (* $counter $product) (+ $counter 1) $max) 
+	)
+)
+
+(fn factt ($num)
+	(fact-iter 1 1 $num)
+)
+
+(fn square ($x)
+	(* $x $x)
+)
+
+(fn sum-of-squares ($x $y)
+	(+ (square $x) (square $y))
+)
+  

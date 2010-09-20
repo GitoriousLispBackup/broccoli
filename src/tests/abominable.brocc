@@ -1,0 +1,111 @@
+;; Test basic math
+(+)
+
+(*)
+
+(* 2 3)
+
+(- 1)
+
+(- 100 22)
+
+(/ 2)
+
+(/ 1000 500)
+
+;; Test atoms
+myname
+
+;; Test numbers
+129
+
+1000.0
+
+(float 129)
+
+(int 1000.0)
+
+;; Test strings
+"This is a test"
+
+;; Test lists
+(list a b c)
+
+(first (list 1 2 3))
+
+(rest (list 1 2 3 4))
+
+(len (list a b c))
+
+(range 1 10)
+
+(range -10 10)
+
+(slice (range 10 20) 0 5)
+
+(cat (list a b c) (list d e f))
+
+(list (list a b c) (list d e f))
+
+;; Test logic
+(and t nil)
+
+(and t t)
+
+(and nil t)
+
+(and nil nil)
+
+(or t nil)
+
+(or t t)
+
+(or nil t)
+
+(or nil nil)
+
+(not t)
+
+(not nil)
+
+;; Test functional
+(eval "(list a b c)")
+
+(call + 2 5)
+
+;; Test binding
+(:= $a 300)
+
+(:= $b 3)
+
+$a
+
+$b
+
+(:= $a $b)
+
+$a
+
+$b
+
+;; Test functions
+(fn double ($num)
+	(* $num 2)
+)
+
+(double 100)
+
+;; Test vodka.vodka
+(reduce * (list 1 2 3 4 5))
+
+(reduce - (list 1 2 3 4))
+
+(reduce + (list))
+
+(map not (list t nil t nil t nil))
+
+(map first (list (list a b) (list 1 2)))
+
+(map double (list 1 2 3 4 5))
+
+(reduce * (list))
